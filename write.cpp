@@ -1,7 +1,7 @@
 #include "serial_port.h"
 
 int main() {
-    // Create an instance of the Serial_Port class
+    // Change to specific serial port and baud rate
     Serial_Port serialPort("/dev/ttyUSB0", 57600);
 
     try {
@@ -23,12 +23,15 @@ int main() {
         printf("Error: %d\n", error);
     }
 
+    
+
     // Close the serial port
     serialPort.stop();
 
     return 0;
 }
 
+// Heatbeat message initialization
 mavlink_message_t create_heartbeat_message() {
     mavlink_message_t message;
     mavlink_heartbeat_t heartbeat;
