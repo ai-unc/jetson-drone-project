@@ -11,7 +11,7 @@ cam.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
 
 
 def get_class_label(class_index):
-    class_labels = {0: 'No Fire', 1: 'Fire!'}  # example mapping
+    class_labels = {0: 'No Fire', 1: 'Fire!'}
     return class_labels.get(class_index, "Unknown")
 
 
@@ -25,6 +25,7 @@ try:
 
         tensor = resized_frame.reshape(-1, 160, 160, 3)
         pred = model.predict(tensor)[0][0]
+        print(model.predict(tensor))
         class_label = get_class_label(1 if pred > 0 else 0)
 
         cv2.putText(frame, f'Prediction: {class_label}',
