@@ -12,7 +12,7 @@
 #include <termios.h> // POSIX terminal control definitions
 #include <pthread.h> // This uses POSIX Threads
 #include <signal.h>
-#include <c_library_v2-master/common/mavlink.h>
+#include "c_library_v2-master/common/mavlink.h"
 #include "generic_port.h"
 
 // ------------------------------------------------------------------------------
