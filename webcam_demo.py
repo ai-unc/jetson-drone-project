@@ -25,7 +25,6 @@ try:
 
         tensor = resized_frame.reshape(-1, 160, 160, 3)
         pred = model.predict(tensor)[0][0]
-        print(model.predict(tensor))
         class_label = get_class_label(1 if pred > 0 else 0)
 
         cv2.putText(frame, f'Prediction: {class_label}',
