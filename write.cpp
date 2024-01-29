@@ -1,6 +1,6 @@
-#include "serial_port.h"
 #include "c_library_v2-master/common/mavlink.h"
-#include "generic_port.h"
+// #include <mavlink.h>
+#include "serial_port.h"
 
 // Heatbeat message initialization
 mavlink_message_t create_heartbeat_message() {
@@ -23,7 +23,7 @@ mavlink_message_t create_heartbeat_message() {
 
 int main() {
     // Change to specific serial port and baud rate
-    Serial_Port serialPort("/dev/ttyACM0", 57600);
+    Serial_Port serialPort("/dev/ttyTHS1", 57600);
 
     try {
         // Open the serial port
