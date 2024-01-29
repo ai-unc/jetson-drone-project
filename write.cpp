@@ -1,5 +1,4 @@
 #include "c_library_v2-master/common/mavlink.h"
-// #include <mavlink.h>
 #include "serial_port.h"
 
 // Heatbeat message initialization

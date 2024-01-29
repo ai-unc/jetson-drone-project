@@ -1,7 +1,7 @@
 #include "serial_port.h"
 
 int main() {
-    Serial_Port serialPort("/dev/ttyUSB0", 57600);
+    Serial_Port serialPort("/dev/ttyTHS1", 57600);
 
     try {
         serialPort.start();
@@ -20,11 +20,14 @@ int main() {
 
                     default:
                         // Handle images
+			printf("Default case\n");
                         break;
                 }
-            }
 
-            sleep(1);
+            } else {
+		    printf("didn't get message\n");
+	    }
+           sleep(1);
         }
     } catch (int error) {
         printf("Error: %d\n", error);
